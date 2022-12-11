@@ -1,5 +1,54 @@
 {
     "name": "farshadff/zaya",
-    "description": "link shortening",
-    "require": {}
+    "description": "zaya ",
+    "keywords": [
+        "farshadff",
+        "zaya"
+    ],
+    "homepage": "https://github.com/farshadff/zaya",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "farshad",
+            "email": "farshad.badiee@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1|^8.0",
+        "illuminate/support": "^5.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Farshadff\\Zaya\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Farshadff\\Zaya\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Farshadff\\Zaya\\ZayaServiceProvider"
+            ],
+            "aliases": {
+                "Zaya": "Farshadff\\Zaya\\ZayaFacade"
+            }
+        }
+    }
 }
