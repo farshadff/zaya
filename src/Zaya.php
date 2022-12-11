@@ -20,10 +20,12 @@ class Zaya
 
     }
 
-    public function makeLink(string $link)
+    public function makeLink(string $link, string $domain = null,string $space=null)
     {
         $body = [
-            'url' => $link
+            'url' => $link,
+            'domain' => $domain,
+            'space' => $space,
         ];
         $response = $this->client->post($this->baseUrl . 'links', [
             'form_params' => $body,
