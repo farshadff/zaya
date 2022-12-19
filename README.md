@@ -20,7 +20,7 @@ ZAYA_API_KEY=W******************************7
 now you can easily call `ZayaFacade` to get the api methods :
 
 ```php
-$shortLink = ZayaFacade::makeLink($yourlink);
+$shortLink = ZayaFacade::makeLink($yourlink,$domain); // $domain is optional which is the id of your domain
 ```
 the list of available methods for v.1.0.0 :
 ```php
