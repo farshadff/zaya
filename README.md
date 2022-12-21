@@ -37,15 +37,15 @@ ZayaFacade::deleteLink($id); //this will remove a link by a given id
 ```php
 ZayaFacade::makeSpace($name,$color); //this will create an space for you :https://zaya.io/developers/spaces?section=create#create
 ZayaFacade::listspace(); //this will give you all spaces you have
-ZayaFacade::detailspace(); //this will give detail of a given space
+ZayaFacade::detailspace($id); //this will give detail of a given space
 ZayaFacade::updatespace($id,$name,$color); //this will update an space for a given id
 ZayaFacade::deletespace($id); //this will remove an space by a given id
 ```
 ## Available Methods for Domain :
 ```php
 ZayaFacade::listDomain(); //this will give you all domains you have
-ZayaFacade::makeDomain(); //this will create a domain for you :https://zaya.io/developers/domains?section=create#create
-ZayaFacade::detailDomain(); //this will give detail of a given domain
+ZayaFacade::makeDomain($name,$index,$notFound); //this will create a domain for you :https://zaya.io/developers/domains?section=create#create
+ZayaFacade::detailDomain($id); //this will give detail of a given domain
 ZayaFacade::updateDomain($id,$name,$index_page = null,$not_found_page = null); //this will update a domain for a given id note that 2 params at last are optional
 ZayaFacade::deleteDomain($id); //this will remove a domain by a given id
 
