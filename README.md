@@ -33,7 +33,7 @@ ZayaFacade::detailLink($id); //this will give you detail of a given link
 ZayaFacade::updateLink($id,$link); //this will update a link for a given id
 ZayaFacade::deleteLink($id); //this will remove a link by a given id
 ```
-##Available Methods For Space :
+## Available Methods For Space :
 ```php
 ZayaFacade::makeSpace($name,$color); //this will create an space for you :https://zaya.io/developers/spaces?section=create#create
 ZayaFacade::listspace(); //this will give you all spaces you have
