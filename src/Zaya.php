@@ -142,17 +142,41 @@ class Zaya
                 'form_params' => $body,
                 'headers' => $this->headers
             ]);
-        } catch(\Exception $e) {
+        } catch (\Exception $e) {
             return $e->getResponse()->getBody()->getContents();
         }
         return json_decode($response->getBody()->getContents())->data;
     }
+
     public function detailDomain($id)
     {
         $response = $this->client->get($this->baseUrl . 'domains/' . $id, [
             'headers' => $this->headers
         ]);
         return collect(json_decode($response->getBody()->getContents())->data);
+    }
+
+    public function updateDomain($id,$name,$index_page = null,$not_found_page = null)
+    {
+        $body = [
+            'name' => $name,
+            'index_page' => $index_page,
+            'not_found_page' => $not_found_page
+        ];
+        $response = $this->client->patch($this->baseUrl . 'domains/' . $id, [
+            'form_params' => $body,
+            'headers' => $this->headers
+        ]);
+        return json_decode($response->getBody()->getContents())->data;
+    }
+
+    public function deleteDomain($id)
+    {
+        $response = $this->client->delete($this->baseUrl . 'domains/' . $id, [
+            'headers' => $this->headers
+        ]);
+
+        return $response->getBody()->getContents();
     }
 
 }
