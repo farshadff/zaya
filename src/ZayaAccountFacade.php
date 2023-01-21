@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Farshadff\Zaya\Skeleton\SkeletonClass
  */
-class ZayaFacade extends Facade
+class ZayaAccountFacade extends Facade
 {
     /**
      * Get the registered name of the component.
@@ -16,6 +16,6 @@ class ZayaFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'zaya';
+        return 'zayaaccount';
     }
 }

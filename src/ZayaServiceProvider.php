@@ -56,5 +56,21 @@ class ZayaServiceProvider extends ServiceProvider
         $this->app->singleton('zaya', function () {
             return new Zaya;
         });
+        // Register the main class to use with the facade
+        $this->app->singleton('zayalink', function () {
+            return new ZayaLink;
+        });
+        // Register the main class to use with the facade
+        $this->app->singleton('zayaspace', function () {
+            return new ZayaSpace;
+        });
+        // Register the main class to use with the facade
+        $this->app->singleton('zayadomain', function () {
+            return new ZayaDomain;
+        });
+        // Register the main class to use with the facade
+        $this->app->singleton('zayaaccount', function () {
+            return new ZayaAccount;
+        });
     }
 }
