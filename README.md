@@ -17,39 +17,44 @@ then add the development api key to your env :
 ZAYA_API_KEY=W******************************7
 ```
 ## Usage
-now you can easily call `ZayaFacade` to get the api methods :
-
+you can use 4 facades in this  package for different functionalities in this package
 ```php
-$shortLink = ZayaFacade::makeLink($yourlink,$params); 
-// $params  is an array of  optional columns please  visit : https://zaya.io/developers/links?section=create#create
-//example $params = ['alias' => 'example' , 'space' =>'sample-name'] 
+ZayaLinkFacade::
+ZayaSpaceFacade::
+ZayaDomainFacade::
+ZayaAccountFacade::
 ```
 the list of available methods for v.1.0.0 :
-## Available Methods For List
+## Available Methods For Link
 ```php
-ZayaFacade::makeLink($yourlink,$params); 
-ZayaFacade::listLink(); //this will give you all links you have
-ZayaFacade::detailLink($id); //this will give you detail of a given link
-ZayaFacade::updateLink($id,$link); //this will update a link for a given id
-ZayaFacade::deleteLink($id); //this will remove a link by a given id
+ZayaLinkFacade::create($yourlink,$params); 
+ZayaLinkFacade::list(); //this will give you all links you have
+ZayaLinkFacade::get($id); //this will give you detail of a given link
+ZayaLinkFacade::update($id,$link); //this will update a link for a given id
+ZayaLinkFacade::delete($id); //this will remove a link by a given id
 ```
 ## Available Methods For Space :
 ```php
-ZayaFacade::makeSpace($name,$color); //this will create an space for you :https://zaya.io/developers/spaces?section=create#create
-ZayaFacade::listspace(); //this will give you all spaces you have
-ZayaFacade::detailspace($id); //this will give detail of a given space
-ZayaFacade::updatespace($id,$name,$color); //this will update an space for a given id
-ZayaFacade::deletespace($id); //this will remove an space by a given id
+ZayaSpaceFacade::create($name,$color); //this will create an space for you :https://zaya.io/developers/spaces?section=create#create
+ZayaSpaceFacade::list(); //this will give you all spaces you have
+ZayaSpaceFacade::get($id); //this will give detail of a given space
+ZayaSpaceFacade::update($id,$name,$color); //this will update an space for a given id
+ZayaSpaceFacade::delete($id); //this will remove an space by a given id
 ```
 ## Available Methods for Domain :
 ```php
-ZayaFacade::listDomain(); //this will give you all domains you have
-ZayaFacade::makeDomain($name,$index,$notFound); //this will create a domain for you :https://zaya.io/developers/domains?section=create#create
-ZayaFacade::detailDomain($id); //this will give detail of a given domain
-ZayaFacade::updateDomain($id,$name,$index_page = null,$not_found_page = null); //this will update a domain for a given id note that 2 params at last are optional
-ZayaFacade::deleteDomain($id); //this will remove a domain by a given id
-
+ZayaDomainFacade::list(); //this will give you all domains you have
+ZayaDomainFacade::create($name,$index,$notFound); //this will create a domain for you :https://zaya.io/developers/domains?section=create#create
+ZayaDomainFacade::get($id); //this will give detail of a given domain
+ZayaDomainFacade::update($id,$name,$index_page = null,$not_found_page = null); //this will update a domain for a given id note that 2 params at last are optional
+ZayaDomainFacade::delete($id); //this will remove a domain by a given id
 ```
+## Available Methods for Account :
+```php
+ZayaAccountFacade::detail(); //this will give you account information
+```
+
+
 
 ### Testing
 
